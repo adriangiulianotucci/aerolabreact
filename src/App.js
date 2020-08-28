@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Product from './components/Product';
+import ProductGrid from './components/ProductGrid';
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, CardHeader
@@ -14,7 +14,7 @@ function App() {
         <CardHeader>Header</CardHeader>
         <CardImg top width="100%" src={imgPanel} alt="Card image cap" />
         <CardBody>
-          <Product> </Product>
+          <ProductGrid> </ProductGrid>
         </CardBody>
       </Card>
   );
