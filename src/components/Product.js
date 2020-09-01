@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './Product.css'
 
 function Product(props) { 
   
     return (
-        <div>
+        <div className='card'>
           <h1>{props.product.name}</h1>
           <h2>{props.product.category}</h2>
           <img width="100%" src={props.product.img.url} alt="Card image cap" />
