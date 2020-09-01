@@ -4,12 +4,12 @@ import './Product.css'
 function Product(props) { 
   
     return (
-        <div className='card'>
-          <h1>{props.product.name}</h1>
-          <h2>{props.product.category}</h2>
-          <img width="100%" src={props.product.img.url} alt="Card image cap" />
-          <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div className='product'>
           <a href="#">{props.product.cost}</a>
+          <img width="100%" src={props.product.img.url} alt="Card image cap" />
+          <hr></hr>
+          <p>{props.product.category}</p>
+          <p>{props.product.name}</p>
         </div>
         ) 
   }
