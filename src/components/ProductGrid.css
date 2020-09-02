@@ -1,5 +1,5 @@
 .container {
     display: grid ;
     grid-template-columns: 276px 276px 276px 276px;
-    justify-content: space-around; 
+    justify-content: space-between; 
 }

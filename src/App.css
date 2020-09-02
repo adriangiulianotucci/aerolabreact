@@ -28,6 +28,20 @@
   color: #61dafb;
 }
 
+.navBar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.navButton {
+  float: left;
+  margin: 0px 15px
+}
+
+.navArrow {
+  float: right;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
