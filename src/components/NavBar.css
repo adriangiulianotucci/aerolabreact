@@ -1,0 +1,9 @@
+.navBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.navButton {
+    float: left;
+    margin: 0px 15px
+}
