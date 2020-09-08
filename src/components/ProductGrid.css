@@ -1,5 +1,5 @@
 .container {
     display: grid ;
-    grid-template-columns: 276px 276px 276px 276px;
+    grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
     justify-content: space-between; 
 }
