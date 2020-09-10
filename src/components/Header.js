@@ -6,12 +6,14 @@ function Header(props) {
   
     return (
         <header>
-            <div className='logo'>
-                <img src={logo}></img>
-            </div>
-            <div className='userData'>
-                <div></div>
-                <div></div>
+            <div className='header'>
+                <div className='logo'>
+                    <img src={logo}></img>
+                </div>
+                <div className='userData'>
+                    <div>a</div>
+                    <div>b</div>
+                </div>
             </div>
         </header>
     ) 

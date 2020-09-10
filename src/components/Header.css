@@ -2,6 +2,12 @@ header {
     height: 80px;
 }
 
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between; 
+}
+
 .logo img {
     width: 36px;
     height: 39px;
