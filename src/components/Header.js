@@ -6,15 +6,13 @@ function Header(props) {
   
     return (
         <header>
-            <div className='header'>
                 <div className='logo'>
                     <img src={logo}></img>
                 </div>
                 <div className='userData'>
-                    <div>a</div>
-                    <div>b</div>
+                    <div className='userName'>John Kite</div>
+                    <div className='userBalance'>6000 <img className='coin'></img></div>
                 </div>
-            </div>
         </header>
     ) 
 }

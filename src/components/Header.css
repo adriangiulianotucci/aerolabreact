@@ -1,14 +1,60 @@
 header {
     height: 80px;
+    display: grid;
+    align-content: center;
+    grid-template-columns: auto auto;
+    justify-content: space-between; 
+    padding: 0 42px;
 }
 
-.header {
+.userData {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between; 
+    align-content: center;
+    grid-template-columns: auto min-content;
+    justify-items: end; 
+}
+
+.userName {
+    padding: 0px 18px 0px 0px;
+    font-family: SourceSansPro-Regular;
+    font-size: 24px;
+    color: #616161;
+    letter-spacing: -0.15px;
+    line-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userBalance {
+    background:#ededed;
+    border-radius:23px;
+    padding: 0 20px;
+    height:48px;
+    font-family:SourceSansPro-Regular;
+    font-size:24px;
+    color:#616161;
+    letter-spacing: -0.15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height:48px;
+}
+
+.userBalance .coin {
+    background-image: radial-gradient(50% -18%, #ffcf00 50%, #f7ae15 100%);
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    margin: 0 0 0 8px;
 }
 
 .logo img {
     width: 36px;
     height: 39px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
