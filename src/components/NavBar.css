@@ -1,9 +1,14 @@
 .navBar {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+    padding: 66px 132px 0px 132px;
 }
 
-.navButton {
+.navBar div {
     float: left;
     margin: 0px 15px
+}
+
+.navArrow {
+    float: right;
 }
