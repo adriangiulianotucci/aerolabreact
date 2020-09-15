@@ -16,7 +16,7 @@ header {
 
 .userName {
     padding: 0px 18px 0px 0px;
-    font-family: SourceSansPro-Regular;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 24px;
     color: #616161;
     letter-spacing: -0.15px;
@@ -31,7 +31,7 @@ header {
     border-radius:23px;
     padding: 0 20px;
     height:48px;
-    font-family:SourceSansPro-Regular;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size:24px;
     color:#616161;
     letter-spacing: -0.15px;
