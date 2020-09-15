@@ -1,14 +1,59 @@
 .navBar {
     display: grid;
-    grid-template-columns: auto auto;
-    padding: 66px 132px 0px 132px;
+    grid-template-columns: auto 1fr;
+    padding: 66px 0px 24px 0px;
+    margin: 0px 132px;
+    border-bottom: 2px solid lightgrey;
+}
+
+.navData {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
 }
 
 .navBar div {
     float: left;
-    margin: 0px 15px
 }
 
 .navArrow {
-    float: right;
+    display: grid;
+    justify-content: right;
+    margin-right: 0px;
+}
+
+.navItems {
+    border-right: 2px solid lightgrey;
+    padding-right: 24px;
+    height: 49px;
+    font-family:SourceSansPro-Regular;
+    font-size:24px;
+    color:#616161;
+    letter-spacing:-0.15px;
+    line-height:48px;
+    text-align:left;
+    
+}
+
+.navSort {
+    font-family: SourceSansPro-Regular;
+    font-size: 24px;
+    color:#a3a3a3;
+    letter-spacing: -0.15px;
+    line-height: 48px;
+    text-align:center;
+    background:#ededed;
+    border-radius: 100px;
+    width: 172px;
+    height: 48px;
+    margin: 0px 15px;
+}
+
+.sortBy {
+    font-family:SourceSansPro-Regular;
+    font-size:24px;
+    color:#a3a3a3;
+    letter-spacing:-0.15px;
+    line-height:48px;
+    text-align:left;
+    margin: 0px 15px;
 }
