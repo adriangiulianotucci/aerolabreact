@@ -1,5 +1,10 @@
 .container {
     display: grid ;
-    grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
+    grid-template-columns: 288px 288px 288px 288px;
     justify-content: space-between; 
+    margin: 42px 132px 0px 132px;
+}
+
+.paraquecomplete {
+    grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
 }
