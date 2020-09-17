@@ -18,7 +18,12 @@
 .navArrow {
     display: grid;
     justify-content: right;
+    grid-template-columns: auto auto;
     margin-right: 0px;
+}
+
+.navArrow img {
+    margin-left: 12px;
 }
 
 .navItems {

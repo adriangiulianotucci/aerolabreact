@@ -13,7 +13,8 @@ function NavBar(props) {
                     <div className='navSort'>Highest Price</div>
                 </div>
                 <div className='navArrow'>
-                    <img src={'/assets/icons/arrow-right.svg'}></img>
+                    <img src={'/assets/icons/arrow-left.svg'} id='leftArrow'></img>
+                    <img src={'/assets/icons/arrow-right.svg'} id='rightArrow'></img>
                 </div>
         </div>
     ) 

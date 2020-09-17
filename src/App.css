@@ -1,4 +1,5 @@
 .body {
   border: 1px solid lightgray;
-  margin: 25px
+  margin: 25px;
+  background: #f9f9f9;
 }

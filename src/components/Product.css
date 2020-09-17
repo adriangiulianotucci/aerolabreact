@@ -1,5 +1,27 @@
-.product img {
-  max-width: 276px;
-  max-height: 276px;
-  
+.product {
+  width: 276px;
+  height: 276px;
+  background:#ffffff;
+  box-shadow:2px 2px 4px 0 rgba(0,0,0,0.10);
+  margin: auto;
+}
+
+.upperCard {
+  border-bottom: 2px solid lightgray;
+  height: 182px;
+  width: 252px;
+  position: relative;
+}
+
+.productImg {
+  max-width: 250px;
+  max-height: 182px;
+  margin: 0px auto;   
+  display: block;
+}
+
+.buyIcon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
