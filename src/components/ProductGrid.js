@@ -37,7 +37,7 @@ function Products() {
 
   return (
     <div className='container'>
-      {products.map((elem)=> <div key={elem._id}><Product product={elem}></Product></div>)}
+      {products.map((elem)=> <Product key={elem._id} product={elem}></Product>)}
     </div>
   ) 
 }
