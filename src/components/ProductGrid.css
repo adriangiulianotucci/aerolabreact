@@ -3,6 +3,7 @@
     grid-template-columns: 288px 288px 288px 288px;
     justify-content: space-between; 
     margin: 42px 132px 0px 132px;
+    width: 1176px;
 }
 
 .paraquecomplete {
