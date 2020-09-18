@@ -11,6 +11,7 @@
   height: 182px;
   width: 252px;
   position: relative;
+  margin: 12px auto 0px auto;
 }
 
 .productImg {
@@ -24,4 +25,26 @@
   position: absolute;
   top: 0px;
   right: 0px;
+}
+
+.lowerCard {
+  margin: 0px 24px 12px 24px;
+}
+
+.lowerCard h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:16px;
+  color:#a3a3a3;
+  letter-spacing:-0.04px;
+  text-align:left;
+  margin-bottom: 0.5px;
+}
+
+.lowerCard h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:18px;
+  color:#616161;
+  letter-spacing:-0.04px;
+  text-align:left;
+  margin-top: 0.5px;
 }
