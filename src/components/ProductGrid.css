@@ -1,16 +1,9 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    grid-auto-rows: 300px;
-    justify-content: space-between; 
+    grid-template-columns: repeat(auto-fill, 276px);
+    grid-auto-rows: 276px;
+    justify-content: center; 
     margin: 42px 132px 0px 132px;
-}
-
-.paraquecomplete {
-    grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
-}
-
-.acordar {
-    grid-template-columns: 288px 288px 288px 288px;
-    max-width: 1176px;
+    padding: 0px auto;
+    grid-gap: 24px 24px;
 }

@@ -3,14 +3,35 @@
   height: 276px;
   background:#ffffff;
   box-shadow:2px 2px 4px 0 rgba(0,0,0,0.10);
-  margin: auto;
+  position: relative;
 }
 
+.product:hover {
+  animation: change 0.1s linear forwards
+}
+
+@keyframes change {
+  100% {
+    transform: translateY(-12px)
+  }
+}
+
+@-webkit-keyframes change {
+  100% {
+    transform: translateY(-12px)
+  }
+}
+
+@-moz-keyframes change {
+  100% {
+    transform: translateY(-12px)
+  }
+}
+
+
 .upperCard {
-  border-bottom: 2px solid lightgray;
   height: 182px;
   width: 252px;
-  position: relative;
   margin: 12px auto 0px auto;
 }
 
@@ -23,12 +44,22 @@
 
 .buyIcon {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 12px;
+  right: 12px;
 }
 
 .lowerCard {
+  border-top: 1px solid #d9d9d9;
   margin: 0px 24px 12px 24px;
+}
+
+.lowerCard h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:18px;
+  color:#616161;
+  letter-spacing:-0.04px;
+  text-align:left;
+  margin-top: 0.5px;
 }
 
 .lowerCard h2 {
@@ -40,11 +71,28 @@
   margin-bottom: 0.5px;
 }
 
-.lowerCard h1 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size:18px;
-  color:#616161;
-  letter-spacing:-0.04px;
-  text-align:left;
-  margin-top: 0.5px;
+.price {
+  opacity: 75%;
+  position: absolute;
+  background-image: linear-gradient(-180deg, #0ad4fa 0%, #25bbf1 100%);
+  width:276px;
+  height:276px;
+  z-index: 1;
+  animation: fadein 0.1s ease-in alternate ;
+  animation-iteration-count: 1
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 75%; }
+}
+
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 75%; }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 75%; }
 }

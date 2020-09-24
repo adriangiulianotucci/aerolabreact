@@ -42,10 +42,7 @@ header {
 }
 
 .userBalance .coin {
-    background-image: radial-gradient(50% -18%, #ffcf00 50%, #f7ae15 100%);
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
+    
     margin: 0 0 0 8px;
 }
 

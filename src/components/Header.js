@@ -10,8 +10,8 @@ function Header(props) {
                     <img src={logo}></img>
                 </div>
                 <div className='userData'>
-                    <div className='userName'>John Kite</div>
-                    <div className='userBalance'>6000 <img className='coin'></img></div>
+                    <div className='userName'>{props.user.name}</div>
+                    <div className='userBalance'>{props.user.points} <img src={'/assets/icons/coin.svg'} className='coin'></img></div>
                 </div>
         </header>
     ) 

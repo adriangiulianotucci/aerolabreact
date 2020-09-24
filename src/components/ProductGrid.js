@@ -12,10 +12,11 @@ const request = { method: 'GET',
                 "Authorization":"Bearer " + token
               },
                mode: 'cors',
-               cache: 'default' };
+               cache: 'default'
+};
 
 
-function Products() {
+function Products(props) {
 
   const [products, setProducts] = useState([])
 
@@ -31,7 +32,7 @@ function Products() {
 
   if (!products) {
     return (
-      <h1>Loading</h1>
+      <h1>Loading...</h1>
     );
   }
 
