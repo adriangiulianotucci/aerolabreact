@@ -71,10 +71,13 @@
   margin-bottom: 0.5px;
 }
 
-.price {
-  opacity: 75%;
+.priceHover div {
+  opacity: 100%;
+}
+
+.priceHover {
   position: absolute;
-  background-image: linear-gradient(-180deg, #0ad4fa 0%, #25bbf1 100%);
+  background-image: linear-gradient(-180deg, rgb(10,212,250,0.80) 0%, rgb(37,187,241,0.80) 100%);
   width:276px;
   height:276px;
   z-index: 1;
@@ -82,17 +85,63 @@
   animation-iteration-count: 1
 }
 
+
 @-webkit-keyframes fadein {
   from { opacity: 0; }
-  to { opacity: 75%; }
+  to { opacity: 100%; }
 }
 
 @-moz-keyframes fadein {
   from { opacity: 0; }
-  to { opacity: 75%; }
+  to { opacity: 100%; }
 }
 
 @keyframes fadein {
   from { opacity: 0; }
-  to { opacity: 75%; }
+  to { opacity: 100%; }
+}
+
+.price {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  margin: 100px auto;
+  grid-template-areas: 
+  'header header'
+  'redeem redeem';
+}
+
+.price h1 {
+  justify-self: end;
+  align-self: baseline;
+  margin: 0 10px 0 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:36px;
+  color:#ffffff;
+  letter-spacing:-0.08px;
+  text-align:center;
+}
+
+.price img {
+  align-self: flex-end;
+  margin-bottom: 3px;
+}
+
+.redeemButton {
+  background:#ffffff;
+  width:228px;
+  height:42px;
+  border-radius: 21px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  color:#616161;
+  letter-spacing:-0.04px;
+  grid-area: redeem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redeemButton h2 {
+  margin: auto;
 }

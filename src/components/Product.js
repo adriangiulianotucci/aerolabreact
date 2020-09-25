@@ -3,9 +3,15 @@ import './Product.css'
 
 function ProductPrice(props) { 
     return (
-          <div className='price' >
+          <div className='priceHover'>
             <img src={'/assets/icons/buy-white.svg'} className='buyIcon'/>
-            <h1>{props.price}</h1>
+            <div className='price'>
+              <h1>{props.price}</h1>
+              <img src='/assets/icons/coin.svg'></img>
+              <div className='redeemButton'>
+                <h2>Redeem now</h2>
+              </div>
+            </div>
           </div>
         ) 
 }
