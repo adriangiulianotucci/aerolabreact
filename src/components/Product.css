@@ -71,10 +71,6 @@
   margin-bottom: 0.5px;
 }
 
-.priceHover div {
-  opacity: 100%;
-}
-
 .priceHover {
   position: absolute;
   background-image: linear-gradient(-180deg, rgb(10,212,250,0.80) 0%, rgb(37,187,241,0.80) 100%);
@@ -82,7 +78,8 @@
   height:276px;
   z-index: 1;
   animation: fadein 0.1s ease-in alternate ;
-  animation-iteration-count: 1
+  animation-iteration-count: 1;
+  box-shadow:10px 10px 10px 0 rgba(0,0,0,0.10);
 }
 
 
@@ -105,7 +102,7 @@
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
-  margin: 100px auto;
+  margin: 90px auto;
   grid-template-areas: 
   'header header'
   'redeem redeem';
@@ -140,8 +137,33 @@
   display:flex;
   align-items: center;
   justify-content: center;
+  margin-top: 12px
 }
 
 .redeemButton h2 {
   margin: auto;
+}
+
+.priceWarning {
+  background:rgb(97,97,97,0.8);
+  border-radius: 100px;
+  width: 142px;
+  height: 42px;
+  color: white;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-size:14px;
+  color:#ffffff;
+  letter-spacing:-0.03px;
+  text-align:right;
+}
+
+.priceWarning img {
+  margin-top: 2px;
+  width: 25px;
+  height: 25px;
 }
