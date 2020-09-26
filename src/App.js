@@ -2,7 +2,6 @@ import React , { useState , useEffect } from 'react';
 import './App.css';
 import ProductGrid from './components/ProductGrid';
 import NavBar from './components/NavBar'
-import imgPanel from './assets/header-x1.png'
 import Header from './components/Header'
 
 const url = "https://coding-challenge-api.aerolab.co/user/me"
@@ -34,7 +33,7 @@ function App() {
   return (
     <div className='body'>
         <Header user={user}></Header>
-        <img width="100%" src={imgPanel} alt="Card image cap" />
+        <img width="100%" src={'/assets/header-x1.png'} alt="Card image cap" />
         <NavBar></NavBar>
         <ProductGrid user={user}></ProductGrid>
     </div>
