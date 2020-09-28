@@ -11,10 +11,6 @@
     grid-template-columns: auto auto auto auto auto;
 }
 
-.navBar div {
-    float: left;
-}
-
 .navArrow {
     display: grid;
     justify-content: right;
@@ -68,3 +64,4 @@
     text-align:left;
     margin: 0px 15px;
 }
+

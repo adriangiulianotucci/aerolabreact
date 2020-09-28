@@ -1,16 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useContext } from 'react';
 import './Header.css'
+import { UserContext } from '../context/context'
 
-function Header(props) { 
-  
+function Header() { 
+
+    const user = useContext(UserContext)
+   
     return (
         <header>
                 <div className='logo'>
                     <img src={'/assets/aerolab-logo.svg'}></img>
                 </div>
                 <div className='userData'>
-                    <div className='userName'>{props.user.name}</div>
-                    <div className='userBalance'>{props.user.points} <img src={'/assets/icons/coin.svg'} className='coin'></img></div>
+                    <div className='userName'>{user.name}</div>
+                    <div className='userBalance'>
+                    {user.points}
+                    <img src={'/assets/icons/coin.svg'} className='coin'></img>
+                    </div>
                 </div>
         </header>
     ) 
