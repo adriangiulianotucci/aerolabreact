@@ -1,20 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Product from './Product'
 import './ProductGrid.css'
-
-const url = "https://coding-challenge-api.aerolab.co/products"
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWZhMzk5OTc1NzJiODAwNmRlNzUzMTUiLCJpYXQiOjE1OTM0NTcwNDl9.A94xfvXPzaSLyGxl1NIQ7hxl3WiER2y3EDxXabxOOFg"
-
-const request = { method: 'GET',
-               headers: {
-                "Content-Type":"application/json",
-                "Accept":"application/json",
-                "Authorization":"Bearer " + token
-              },
-               mode: 'cors',
-               cache: 'default'
-};
-
+import api from '../utils/api'
 
 function Products(props) {
 
@@ -22,9 +9,9 @@ function Products(props) {
 
   useEffect(() => {
     async function req() {
-      const response = await fetch(url,request)
-      const json = await response.json()
-      setProducts(json)
+      api.redeemProduct('5a0b35c1734d1d08bf7084c3')
+      let products = await api.getProducts()
+      setProducts(products)
     }
     req()
   },[]);
