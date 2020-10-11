@@ -17,22 +17,27 @@ const api = {
     },
 
     getRequest : function(action, token, id = undefined){
-        let request = { 
-                    method: action,
-                    headers: {
-                    "Content-Type":"application/json",
-                    "Accept":"application/json",
-                    "Authorization":"Bearer " + token
-                    },
-                    mode: 'cors',
-                    cache: 'default' }
-        if (id) {
-            request.body = {
-                "productId": id
-            }
-            request.mode = 'no-cors'
+        let myHeaders = new Headers();
+
+        myHeaders.append("Content-Type", "application/json")
+        myHeaders.append("Accept", "application/json")
+        myHeaders.append("Authorization", "Bearer " + token)
+
+        let requestOptions = {
+            method: action,
+            headers: myHeaders,
+            redirect: 'follow'
         }
-        return request
+
+        if (id) {
+            let raw = JSON.stringify(
+                {
+                    "productId": id
+                }
+            )
+            requestOptions.body = raw
+        }
+        return requestOptions
     },
     
     getUser : async function() {

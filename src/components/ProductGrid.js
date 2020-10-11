@@ -9,7 +9,6 @@ function Products(props) {
 
   useEffect(() => {
     async function req() {
-      api.redeemProduct('5a0b35c1734d1d08bf7084c3')
       let products = await api.getProducts()
       setProducts(products)
     }
