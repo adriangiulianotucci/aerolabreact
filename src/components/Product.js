@@ -2,6 +2,7 @@ import React, { useState, useEffect , useContext } from 'react';
 import './Product.css'
 import { UserContext } from '../context/context'
 import api from '../utils/api'
+import userProvider from '../context/context'
 
 
 function Product(props) { 
@@ -37,9 +38,11 @@ function Product(props) {
 
 function ProductPrice(props) {
 
-  const redeemProduct = function(props) {
-    api.redeemProduct(props.product._id);
-    window.location.reload(false);
+  const redeemProduct = async function(props) {
+    /* let response = await api.redeemProduct(props.product._id)
+    if (response.status == 200) {
+      console.log('ok')
+    } */
   }
 
     return (

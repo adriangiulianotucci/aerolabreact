@@ -20,3 +20,5 @@ export function UserProvider(props) {
       )
 
 }
+
+export default UserProvider
