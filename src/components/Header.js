@@ -4,8 +4,7 @@ import { UserContext } from '../context/context'
 
 function Header() { 
 
-    const user = useContext(UserContext)
-   
+    const {user} = useContext(UserContext)
     return (
         <header>
                 <div className='logo'>

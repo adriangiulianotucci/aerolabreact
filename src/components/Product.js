@@ -6,7 +6,7 @@ import userProvider from '../context/context'
 
 
 function Product(props) { 
-  const user = useContext(UserContext)
+  const {user} = useContext(UserContext)
   const [available, setAvailable] = useState(false)
   const [hovered, setHovered] = useState(false)
   

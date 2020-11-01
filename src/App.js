@@ -10,10 +10,10 @@ function App() {
   return (
     <div className='body'>
         <UserProvider>
-        <Header></Header>
-        <img width="100%" src={'/assets/header-x1.png'} alt="Card image cap" />
-        <NavBar></NavBar>
-        <ProductGrid></ProductGrid>
+          <Header></Header>
+          <img width="100%" src={'/assets/header-x1.png'} alt="Card image cap" />
+          <NavBar></NavBar>
+          <ProductGrid></ProductGrid>
         </UserProvider>
     </div>
   );
