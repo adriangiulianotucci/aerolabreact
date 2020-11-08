@@ -17,7 +17,6 @@ function Product(props) {
     }
   },[user]);
   
-  
     return (
       
             <div className='product' onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>

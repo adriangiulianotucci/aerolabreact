@@ -3,6 +3,7 @@ import './App.css';
 import ProductGrid from './components/ProductGrid';
 import NavBar from './components/NavBar'
 import Header from './components/Header'
+import Footer from './components/Footer';
 import {UserProvider} from './context/context'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <img width="100%" src={'/assets/header-x1.png'} alt="Card image cap" />
           <NavBar></NavBar>
           <ProductGrid></ProductGrid>
+          <Footer></Footer>
         </UserProvider>
     </div>
   );
