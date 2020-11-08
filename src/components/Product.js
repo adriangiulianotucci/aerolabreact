@@ -2,8 +2,6 @@ import React, { useState, useEffect , useContext } from 'react';
 import './Product.css'
 import { UserContext } from '../context/context'
 import api from '../utils/api'
-import userProvider from '../context/context'
-
 
 function Product(props) { 
   const {user} = useContext(UserContext)
@@ -38,12 +36,15 @@ function Product(props) {
 }
 
 function ProductPrice(props) {
+  const {user , setUser} = useContext(UserContext)
 
   const redeemProduct = async function(props) {
-    /* let response = await api.redeemProduct(props.product._id)
-    if (response.status == 200) {
-      console.log('ok')
-    } */
+    let prevUser = Object.assign({}, user);
+    let response = await api.redeemProduct(props.product._id)
+      if (response.status == 200) {
+        prevUser.points -= props.product.cost
+        setUser(prevUser)
+      }
   }
 
     return (
