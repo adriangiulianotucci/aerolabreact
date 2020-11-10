@@ -1,6 +1,6 @@
 import React, { useState, useEffect , useContext } from 'react';
 import './Product.css'
-import { UserContext } from '../context/context'
+import { UserContext } from '../context/userContext'
 import api from '../utils/api'
 
 function Product(props) { 

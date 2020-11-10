@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useContext } from 'react';
 import './NavBar.css'
+import { UserContext } from '../context/userContext'
 
 function NavBar(props) { 
-  
+    const { order , setOrder } = useContext(UserContext)
+
     return (
             <div className='navBar'>
                 <div className='navData'>
-                    <div className='navItems'>16 of 32 products</div>
+                    <div className='navItems'>16 of {order.results} products</div>
                     <div className='sortBy'>Sort by:</div>
                     <div className='navSort'>Most Recent</div>
                     <div className='navSort'>Lowest Price</div>

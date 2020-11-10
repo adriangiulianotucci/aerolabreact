@@ -1,6 +1,6 @@
 import React, { useState, useEffect , useContext } from 'react';
 import './Header.css'
-import { UserContext } from '../context/context'
+import { UserContext } from '../context/userContext'
 
 function Header() { 
 

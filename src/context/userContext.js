@@ -5,6 +5,15 @@ export const UserContext = React.createContext();
 
 export function UserProvider(props) {
     const [user, setUser] = useState([])
+    
+    const [order, setOrder] = useState(
+      {
+        order : 'recent' ,
+        page: 0 ,
+        results: 0,
+        totalPages: 0
+      }
+    )
 
     useEffect(() => {
         async function req() {
@@ -15,11 +24,10 @@ export function UserProvider(props) {
       },[]);
 
       return (
-          <UserContext.Provider value={{user, setUser}}>
+          <UserContext.Provider value={{user, setUser , order, setOrder}}>
             {props.children}
           </UserContext.Provider>
       )
 
 }
 
-export default UserProvider

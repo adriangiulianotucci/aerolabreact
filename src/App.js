@@ -4,7 +4,7 @@ import ProductGrid from './components/ProductGrid';
 import NavBar from './components/NavBar'
 import Header from './components/Header'
 import Footer from './components/Footer';
-import {UserProvider} from './context/context'
+import { UserProvider } from './context/userContext'
 
 function App() {
 
