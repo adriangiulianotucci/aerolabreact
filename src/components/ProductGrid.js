@@ -10,7 +10,7 @@ function Products(props) {
   const [productPages, setPages] = useState([])
   const [order, setOrder] = useState(
     {
-      order : 'recent' ,
+      orderBy : 'recent' ,
       page: 0 ,
       results: 0,
       totalPages: 0,
@@ -18,7 +18,7 @@ function Products(props) {
     }
   )
 
-  const divideProducts = async function (array) {
+  const divideProducts = async function (array, prevState) {
     let myArray = await array
     let arrayLength = myArray.length;
     let productsArray = [];
@@ -30,10 +30,9 @@ function Products(props) {
 
     setPages(productsArray)
 
-    let newOrder = Object.assign({}, order)
+    let newOrder = prevState
     newOrder.totalPages = productsArray.length
     setOrder(newOrder)
-    console.log(newOrder)
   }
 
   useEffect(() => {
@@ -43,9 +42,8 @@ function Products(props) {
 
       let newOrder = Object.assign({}, order)
       newOrder.results = await products.length
-      setOrder(newOrder)
 
-      divideProducts(products)
+      divideProducts(products, newOrder)
     }
     req()
   },[]);
@@ -53,11 +51,23 @@ function Products(props) {
   const alterPage = function(direction){
     switch (direction) {
       case 'left':
-        console.log('-1')
+        if(order.page>0) {
+          let newOrder = Object.assign({}, order)
+          newOrder.page--
+          setOrder(newOrder)
+        }
         break;
     
       case 'right':
-        console.log('+1')
+        if(order.page<order.totalPages) {
+          let newOrder = Object.assign({}, order)
+          newOrder.page++
+          setOrder(newOrder)
+          console.log(order.page, order.totalPages,newOrder)
+        }
+        break;
+      
+      default:
         break;
     }
   }

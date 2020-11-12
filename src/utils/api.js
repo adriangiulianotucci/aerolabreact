@@ -11,7 +11,9 @@ const api = {
             case 'getProducts' :
                 return url + 'products';
             case 'redeemProduct' :
-                return url + 'redeem'
+                return url + 'redeem';
+            default:
+                break;
         }
 
     },
