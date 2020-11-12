@@ -3,10 +3,10 @@ import './Footer.css'
 import { UserContext } from '../context/userContext'
 
 function Footer(props) { 
-    const { order } = useContext(UserContext)
+    const order = props.order
     return (
             <div className='footer'>
-                16 of {order.results} products
+                {order.productsPerPage} of {order.results} products
             </div>
     ) 
 }

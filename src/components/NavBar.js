@@ -3,20 +3,22 @@ import './NavBar.css'
 import { UserContext } from '../context/userContext'
 
 function NavBar(props) { 
-    const { order , setOrder } = useContext(UserContext)
+    const order = props.order
+
+    let alterPage = props.alterPage
 
     return (
             <div className='navBar'>
                 <div className='navData'>
-                    <div className='navItems'>16 of {order.results} products</div>
+                    <div className='navItems'>{order.productsPerPage} of {order.results} products</div>
                     <div className='sortBy'>Sort by:</div>
                     <div className='navSort'>Most Recent</div>
                     <div className='navSort'>Lowest Price</div>
                     <div className='navSort'>Highest Price</div>
                 </div>
                 <div className='navArrow'>
-                    <img src={'/assets/icons/arrow-left.svg'} id='leftArrow'></img>
-                    <img src={'/assets/icons/arrow-right.svg'} id='rightArrow'></img>
+                    <img src={'/assets/icons/arrow-left.svg'} id='leftArrow' onClick={() => {alterPage('left')}}></img>
+                    <img src={'/assets/icons/arrow-right.svg'} id='rightArrow' onClick={() => {alterPage('right')}}></img>
                 </div>
         </div>
     ) 

@@ -8,7 +8,7 @@ import { UserProvider } from './context/userContext'
 
 function App() {
 
-  return (
+  /* return (
     <div className='body'>
         <UserProvider>
           <Header></Header>
@@ -16,6 +16,16 @@ function App() {
           <NavBar></NavBar>
           <ProductGrid></ProductGrid>
           <Footer></Footer>
+        </UserProvider>
+    </div>
+  ); */
+
+  return (
+    <div className='body'>
+        <UserProvider>
+          <Header></Header>
+          <img width="100%" src={'/assets/header-x1.png'} alt="Card image cap" />
+          <ProductGrid></ProductGrid>
         </UserProvider>
     </div>
   );
