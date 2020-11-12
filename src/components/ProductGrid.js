@@ -18,7 +18,7 @@ function Products(props) {
     }
   )
 
-  const divideProducts = async function (array, prevState) {
+  const divideProducts = async function (array) {
     let myArray = await array
     let arrayLength = myArray.length;
     let productsArray = [];
@@ -30,9 +30,7 @@ function Products(props) {
 
     setPages(productsArray)
 
-    let newOrder = prevState
-    newOrder.totalPages = productsArray.length
-    setOrder(newOrder)
+    setOrder({...order, totalPages: productsArray.length})
   }
 
   useEffect(() => {
@@ -40,10 +38,9 @@ function Products(props) {
       let products = await api.getProducts()
       setProducts(products)
 
-      let newOrder = Object.assign({}, order)
-      newOrder.results = await products.length
+      setOrder({...order, results: await products.length})
 
-      divideProducts(products, newOrder)
+      divideProducts(products)
     }
     req()
   },[]);
@@ -52,18 +49,13 @@ function Products(props) {
     switch (direction) {
       case 'left':
         if(order.page>0) {
-          let newOrder = Object.assign({}, order)
-          newOrder.page--
-          setOrder(newOrder)
+          setOrder({...order, page: order.page-1})
         }
         break;
     
       case 'right':
         if(order.page<order.totalPages) {
-          let newOrder = Object.assign({}, order)
-          newOrder.page++
-          setOrder(newOrder)
-          console.log(order.page, order.totalPages,newOrder)
+          setOrder({...order, page: order.page+1})
         }
         break;
       
