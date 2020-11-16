@@ -1,16 +1,13 @@
 import React, { useState, useEffect , useContext } from 'react';
 import './NavBar.css'
-import { UserContext } from '../context/userContext'
 
 function NavBar(props) { 
-    const order = props.order
-
     let alterPage = props.alterPage
 
     return (
             <div className='navBar'>
                 <div className='navData'>
-                    <div className='navItems'>{order.productsPerPage} of {order.results} products</div>
+                    <div className='navItems'>{props.productsPerPage} of {props.totalResults} products</div>
                     <div className='sortBy'>Sort by:</div>
                     <div className='navSort'>Most Recent</div>
                     <div className='navSort'>Lowest Price</div>

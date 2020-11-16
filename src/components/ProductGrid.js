@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Product from './Product'
 import './ProductGrid.css'
 import api from '../utils/api'
@@ -8,29 +8,23 @@ import Footer from './Footer'
 function Products(props) {
   const [products, setProducts] = useState([])
   const [productPages, setPages] = useState([])
-  const [order, setOrder] = useState(
-    {
-      orderBy : 'recent' ,
-      page: 0 ,
-      results: 0,
-      totalPages: 0,
-      productsPerPage : 16,
-    }
-  )
+  const [orderBy, setOrder] = useState('recent')
+  const [currentPage, setCurrentPage] = useState(0)  
+  const [totalResults, setTotalResults] = useState(0)
+  const [productsPerPage, setProductsPerPages] = useState(16)
+  const [totalPages, setTotalPages] = useState(0)
 
   const divideProducts = async function (array) {
-    let myArray = await array
+    let myArray = array
     let arrayLength = myArray.length;
     let productsArray = [];
     
-    for (let index = 0; index < arrayLength; index += order.productsPerPage) {
-        let tempArray = myArray.slice(index, index+order.productsPerPage);
+    for (let index = 0; index < arrayLength; index += productsPerPage) {
+        let tempArray = myArray.slice(index, index+productsPerPage);
         productsArray.push(tempArray);
     }
 
-    setPages(productsArray)
-
-    setOrder({...order, totalPages: productsArray.length})
+    return productsArray
   }
 
   useEffect(() => {
@@ -38,24 +32,27 @@ function Products(props) {
       let products = await api.getProducts()
       setProducts(products)
 
-      setOrder({...order, results: await products.length})
-
-      divideProducts(products)
+      let productsArray = await divideProducts(products)
+      
+      setPages(productsArray)
+      setTotalResults(products.length)
+      setTotalPages(productsArray.length)
     }
     req()
-  },[]);
+  },[products]);
 
   const alterPage = function(direction){
     switch (direction) {
       case 'left':
-        if(order.page>0) {
-          setOrder({...order, page: order.page-1})
+        if(currentPage > 0) {
+          setCurrentPage(currentPage-1)
         }
         break;
     
       case 'right':
-        if(order.page<order.totalPages) {
-          setOrder({...order, page: order.page+1})
+        if(currentPage < totalPages) {
+          setCurrentPage(1)
+          console.log(currentPage)
         }
         break;
       
@@ -72,11 +69,11 @@ function Products(props) {
 
     return (
       <div>
-        <NavBar alterPage={alterPage} order={order}></NavBar>
+        {totalResults > 0 && totalPages >0 && <NavBar alterPage={alterPage} productsPerPage={productsPerPage} totalResults={totalResults}></NavBar>}
         <div className='container'>
-          {productPages[order.page].map((elem)=> <Product key={elem._id} product={elem}></Product>)}
+          {productPages[currentPage].map((elem)=> <Product key={elem._id} product={elem}></Product>)}
         </div>
-        <Footer order={order}></Footer>
+        {totalResults > 0 && <Footer productsPerPage={productsPerPage} totalResults={totalResults}></Footer>}
       </div>
     ) 
 }

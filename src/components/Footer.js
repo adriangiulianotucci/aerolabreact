@@ -1,14 +1,12 @@
-import React, { useState, useEffect , useContext } from 'react';
+import React from 'react';
 import './Footer.css'
-import { UserContext } from '../context/userContext'
 
 function Footer(props) { 
-    const order = props.order
-    return (
+        return (
             <div className='footer'>
-                {order.productsPerPage} of {order.results} products
+                {props.productsPerPage} of {props.totalResults} products
             </div>
     ) 
 }
 
-  export default Footer
+export default Footer
