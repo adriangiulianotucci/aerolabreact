@@ -39,7 +39,7 @@ function Products(props) {
       setTotalPages(productsArray.length)
     }
     req()
-  },[products]);
+  },[]);
 
   const alterPage = function(direction){
     switch (direction) {
@@ -52,24 +52,42 @@ function Products(props) {
       case 'right':
         if(currentPage < totalPages) {
           setCurrentPage(1)
-          console.log(currentPage)
         }
         break;
+        
+        default:
+          break;
+    }
+  }
+
+  const alterOrder = function(order){
+    switch (order) {
+      case 'recent':
+        setOrder(order)
+        break;
+    
+      case 'lowest':
+        setOrder(order)
+        break;
       
+      case 'highest':
+        setOrder(order)
+        break;
+
       default:
         break;
     }
   }
-
-  if (productPages.length === 0) {
-    return (
-      <h1>Loading...</h1>
-    );
-  }
-
+      console.log(orderBy)
+      if (productPages.length === 0) {
+        return (
+          <h1>Loading...</h1>
+          );
+        }
+        console.log(currentPage)
     return (
       <div>
-        {totalResults > 0 && totalPages >0 && <NavBar alterPage={alterPage} productsPerPage={productsPerPage} totalResults={totalResults}></NavBar>}
+        {totalResults > 0 && totalPages >0 && <NavBar alterPage={alterPage} alterOrder={alterOrder} productsPerPage={productsPerPage} totalResults={totalResults}></NavBar>}
         <div className='container'>
           {productPages[currentPage].map((elem)=> <Product key={elem._id} product={elem}></Product>)}
         </div>
