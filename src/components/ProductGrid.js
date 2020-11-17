@@ -60,31 +60,51 @@ function Products(props) {
     }
   }
 
-  const alterOrder = function(order){
+  const alterOrder = async function(order){
     switch (order) {
       case 'recent':
-        setOrder(order)
+        let orderedRecentArray = await divideProducts(products)
+        setPages(orderedRecentArray)
         break;
-    
       case 'lowest':
-        setOrder(order)
+        let lowestArray = [...products].sort(function (a, b) {
+          if (a.cost > b.cost) {
+            return 1;
+          }
+          if (a.cost < b.cost) {
+            return -1;
+          }
+          return 0;
+        });
+        let orderedLowestArray = await divideProducts(lowestArray)
+        setPages(orderedLowestArray)
         break;
       
       case 'highest':
-        setOrder(order)
+        let highestArray = [...products].sort(function (a, b) {
+          if (a.cost < b.cost) {
+            return 1;
+          }
+          if (a.cost > b.cost) {
+            return -1;
+          }
+          return 0;
+        });
+        let orderedHighestArray = await divideProducts(highestArray)
+        setPages(orderedHighestArray)
         break;
 
       default:
         break;
     }
   }
-      console.log(orderBy)
+      console.log(products)
+
       if (productPages.length === 0) {
         return (
           <h1>Loading...</h1>
           );
         }
-        console.log(currentPage)
     return (
       <div>
         {totalResults > 0 && totalPages >0 && <NavBar alterPage={alterPage} alterOrder={alterOrder} productsPerPage={productsPerPage} totalResults={totalResults}></NavBar>}

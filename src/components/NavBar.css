@@ -20,6 +20,7 @@
 
 .navArrow img {
     margin-left: 12px;
+    cursor: pointer;
 }
 
 .navItems {
@@ -52,6 +53,7 @@
 .navSort:hover {
     color: #ffffff;
     background: #0ad4fa;
+    cursor: pointer;
 }
 
 
