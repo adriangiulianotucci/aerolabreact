@@ -9,7 +9,7 @@ function Products(props) {
   const [products, setProducts] = useState([])
   const [productPages, setPages] = useState([])
   const [orderBy, setOrder] = useState('recent')
-  const [currentPage, setCurrentPage] = useState(0)  
+  const [currentPage, setCurrentPage] = useState(0)
   const [totalResults, setTotalResults] = useState(0)
   const [productsPerPage, setProductsPerPages] = useState(16)
   const [totalPages, setTotalPages] = useState(0)
@@ -18,10 +18,10 @@ function Products(props) {
     let myArray = array
     let arrayLength = myArray.length;
     let productsArray = [];
-    
+
     for (let index = 0; index < arrayLength; index += productsPerPage) {
-        let tempArray = myArray.slice(index, index+productsPerPage);
-        productsArray.push(tempArray);
+      let tempArray = myArray.slice(index, index + productsPerPage);
+      productsArray.push(tempArray);
     }
 
     return productsArray
@@ -33,34 +33,34 @@ function Products(props) {
       setProducts(products)
 
       let productsArray = await divideProducts(products)
-      
+
       setPages(productsArray)
       setTotalResults(products.length)
       setTotalPages(productsArray.length)
     }
     req()
-  },[]);
+  }, []);
 
-  const alterPage = function(direction){
+  const alterPage = function (direction) {
     switch (direction) {
       case 'left':
-        if(currentPage > 0) {
-          setCurrentPage(currentPage-1)
+        if (currentPage > 0) {
+          setCurrentPage(currentPage - 1)
         }
         break;
-    
+
       case 'right':
-        if(currentPage < totalPages) {
+        if (currentPage < totalPages) {
           setCurrentPage(1)
         }
         break;
-        
-        default:
-          break;
+
+      default:
+        break;
     }
   }
 
-  const alterOrder = async function(order){
+  const alterOrder = async function (order) {
     switch (order) {
       case 'recent':
         let orderedRecentArray = await divideProducts(products)
@@ -79,7 +79,7 @@ function Products(props) {
         let orderedLowestArray = await divideProducts(lowestArray)
         setPages(orderedLowestArray)
         break;
-      
+
       case 'highest':
         let highestArray = [...products].sort(function (a, b) {
           if (a.cost < b.cost) {
@@ -99,20 +99,20 @@ function Products(props) {
     }
   }
 
-      if (productPages.length === 0) {
-        return (
-          <h1>Loading...</h1>
-          );
-        }
+  if (productPages.length === 0) {
     return (
-      <div>
-        {totalResults > 0 && totalPages >0 && <NavBar alterPage={alterPage} alterOrder={alterOrder} productsPerPage={productsPerPage} totalResults={totalResults}></NavBar>}
-        <div className='container'>
-          {productPages[currentPage].map((elem)=> <Product key={elem._id} product={elem}></Product>)}
-        </div>
-        {totalResults > 0 && <Footer productsPerPage={productsPerPage} totalResults={totalResults}></Footer>}
+      <h1>Loading...</h1>
+    );
+  }
+  return (
+    <div>
+      {totalResults > 0 && totalPages > 0 && <NavBar alterPage={alterPage} alterOrder={alterOrder} productsPerPage={productsPerPage} totalResults={totalResults}></NavBar>}
+      <div className='container'>
+        {productPages[currentPage].map((elem) => <Product key={elem._id} product={elem}></Product>)}
       </div>
-    ) 
+      {totalResults > 0 && <Footer productsPerPage={productsPerPage} totalResults={totalResults}></Footer>}
+    </div>
+  )
 }
 
 export default Products;
