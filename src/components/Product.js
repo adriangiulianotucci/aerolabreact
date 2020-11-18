@@ -22,8 +22,8 @@ function Product(props) {
             <div className='product' onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
               {hovered && available && <ProductPrice product={props.product}></ProductPrice>}
               <div className='upperCard'>
-                <img width="100%" src={props.product.img.url} alt="Card image cap" className='productImg'/>
-                {!hovered && available && <img src={'/assets/icons/buy-blue.svg'} className='buyIcon'/>}    
+                <img width="100%" src={props.product.img.url} alt="product" className='productImg'/>
+                {!hovered && available && <img src={'/assets/icons/buy-blue.svg'} alt='blueBuy' className='buyIcon'/>}    
                 {!available && <PriceTag product={props.product}></PriceTag>}     
               </div>
               <div className='lowerCard'>
@@ -40,7 +40,7 @@ function ProductPrice(props) {
   const redeemProduct = async function(props) {
     let prevUser = Object.assign({}, user);
     let response = await api.redeemProduct(props.product._id)
-      if (response.status == 200) {
+      if (response.status === 200) {
         prevUser.points -= props.product.cost
         setUser(prevUser)
       }
@@ -48,10 +48,10 @@ function ProductPrice(props) {
 
     return (
           <div className='priceHover' onClick={()=> redeemProduct(props)}>
-            <img src={'/assets/icons/buy-white.svg'} className='buyIcon'/>
+            <img src={'/assets/icons/buy-white.svg'} className='buyIcon' alt='buyWhite'/>
             <div className='price'>
               <h1>{props.product.cost}</h1>
-              <img src='/assets/icons/coin.svg'></img>
+              <img src='/assets/icons/coin.svg' alt='coinImage'></img>
               <div className='redeemButton'>
                 <h2>Redeem now</h2>
               </div>
@@ -62,7 +62,7 @@ function ProductPrice(props) {
 
 function PriceTag(props) {
   return (
-    <div className='buyIcon priceTag'>You need {props.product.cost}<img src='/assets/icons/coin.svg'></img></div>
+    <div className='buyIcon priceTag'>You need {props.product.cost}<img src='/assets/icons/coin.svg' alt='coin'></img></div>
     ) 
 }
 

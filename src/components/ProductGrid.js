@@ -98,7 +98,6 @@ function Products(props) {
         break;
     }
   }
-      console.log(products)
 
       if (productPages.length === 0) {
         return (

@@ -15,8 +15,8 @@ function NavBar(props) {
                     <div className='navSort' onClick={() => {alterOrder('highest')}}>Highest Price</div>
                 </div>
                 <div className='navArrow'>
-                    <img src={'/assets/icons/arrow-left.svg'} id='leftArrow' onClick={() => {alterPage('left')}}></img>
-                    <img src={'/assets/icons/arrow-right.svg'} id='rightArrow' onClick={() => {alterPage('right')}}></img>
+                    <img src={'/assets/icons/arrow-left.svg'} id='leftArrow' onClick={() => {alterPage('left')}} alt='leftArrow'></img>
+                    <img src={'/assets/icons/arrow-right.svg'} id='rightArrow' onClick={() => {alterPage('right')}}alt='rightArrow'></img>
                 </div>
         </div>
     ) 
